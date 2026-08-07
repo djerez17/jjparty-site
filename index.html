@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>J&amp;J Party Rentals — Tables, Chairs &amp; Jumpers for Your Next Event</title>
+  <meta name="description" content="J&J Party Rentals offers tables, chairs, and bounce house jumpers for birthdays and backyard events. Browse rentals, build a bundle, and request a quote." />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-brand" href="index.html">
+        <img src="assets/logo-nav.png" width="44" height="44" alt="J&amp;J Party Rentals logo" />
+        J&amp;J Party Rentals
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <div class="nav-links">
+        <a href="index.html" class="active" data-i18n="nav-home">Home</a>
+        <a href="shop.html" data-i18n="nav-shop">Shop Rentals</a>
+        <a href="catering.html" data-i18n="nav-catering">Catering</a>
+        <a href="about.html" data-i18n="nav-about">About</a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn active" data-lang="en">English</button>
+          <button type="button" class="lang-btn" data-lang="es">Spanish</button>
+        </div>
+      </div>
+      <a class="nav-cart" href="cart.html">
+        🛒 <span data-i18n="nav-cart">Cart</span> <span class="cart-count">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow" data-i18n="hero-eyebrow">Serving your neighborhood</span>
+          <h1 data-i18n="hero-h1">Everything you need for a party that pops.</h1>
+          <p data-i18n="hero-copy">Tables, chairs, bounce houses, catering and much more. Delivered, set up, and ready to go. Build your own bundle or grab one of our ready-made bundles.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="shop.html" data-i18n="hero-cta">Browse Rentals</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="assets/logo.png" width="320" height="320" alt="J&amp;J Party Rentals logo" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="services-h2">Our Services</h2>
+          <p data-i18n="services-p">More than rentals — we handle the details so your event goes smoothly.</p>
+        </div>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-icon">🚚</span>
+          <strong data-i18n="service-delivery-title">Delivery &amp; Setup</strong>
+          <span data-i18n="service-delivery-desc">We drop off, set up, and make sure everything's ready before your guests arrive.</span>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🗓️</span>
+          <strong data-i18n="service-schedule-title">Flexible Scheduling</strong>
+          <span data-i18n="service-schedule-desc">Same-day and weekend availability to fit your event date.</span>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🎈</span>
+          <strong data-i18n="service-bundles-title">Custom Bundles</strong>
+          <span data-i18n="service-bundles-desc">Mix and match tables, chairs, and jumpers into a package built for you.</span>
+        </div>
+        <div class="service-card">
+          <span class="service-icon">🍽️</span>
+          <strong data-i18n="service-catering-title">Catering</strong>
+          <span data-i18n="service-catering-desc">Food and drink options to round out your event, delivered alongside your rentals.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="promo-banner">
+        <strong data-i18n="promo-title">🎉 Summer Special — Free delivery on orders over $300</strong>
+        <span data-i18n="promo-desc">Mention code SUMMER26 when you request your quote.</span>
+      </div>
+
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="bundles-h2">Popular Bundles</h2>
+          <p data-i18n="bundles-p">Ready-made bundles at a discount — or build your own on the shop page.</p>
+        </div>
+        <a class="section-link" href="shop.html" data-i18n="bundles-link">Build a custom bundle →</a>
+      </div>
+
+      <div class="bundle-grid" id="bundle-grid"></div>
+    </section>
+
+    <section class="section container">
+      <div class="section-head">
+        <div>
+          <h2 data-i18n="categories-h2">Shop by Category</h2>
+          <p data-i18n="categories-p">Everything we offer, organized so you can find it fast.</p>
+        </div>
+      </div>
+      <div class="cat-grid" id="cat-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="assets/logo-nav.png" width="36" height="36" alt="J&amp;J Party Rentals logo" />
+            J&amp;J Party Rentals
+          </div>
+        </div>
+        <div class="footer-contact">
+          <div class="footer-heading" data-i18n="footer-contact-heading">Contact Us</div>
+          📞 <a href="tel:+19514428155">(951) 442-8155</a><br />
+          ✉️ <a href="mailto:jjrentalservices1@gmail.com">jjrentalservices1@gmail.com</a>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/jj.partyrentals26" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/jj.party_rentals/" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2.2c2.72 0 3.05.01 4.12.06 1.07.05 1.79.22 2.43.46.66.26 1.22.6 1.77 1.15.55.55.89 1.11 1.15 1.77.24.64.41 1.36.46 2.43.05 1.07.06 1.4.06 4.12s-.01 3.05-.06 4.12c-.05 1.07-.22 1.79-.46 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.24-1.36.41-2.43.46-1.07.05-1.4.06-4.12.06s-3.05-.01-4.12-.06c-1.07-.05-1.79-.22-2.43-.46a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.24-.64-.41-1.36-.46-2.43C2.21 15.05 2.2 14.72 2.2 12s.01-3.05.06-4.12c.05-1.07.22-1.79.46-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.64 2.53c.64-.24 1.36-.41 2.43-.46C8.95 2.21 9.28 2.2 12 2.2Zm0 1.8c-2.67 0-2.99.01-4.04.06-.92.04-1.42.19-1.75.32-.44.17-.75.37-1.08.7-.33.33-.53.64-.7 1.08-.13.33-.28.83-.32 1.75-.05 1.05-.06 1.37-.06 4.04s.01 2.99.06 4.04c.04.92.19 1.42.32 1.75.17.44.37.75.7 1.08.33.33.64.53 1.08.7.33.13.83.28 1.75.32 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.92-.04 1.42-.19 1.75-.32.44-.17.75-.37 1.08-.7.33-.33.53-.64.7-1.08.13-.33.28-.83.32-1.75.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.92-.19-1.42-.32-1.75a2.9 2.9 0 0 0-.7-1.08 2.9 2.9 0 0 0-1.08-.7c-.33-.13-.83-.28-1.75-.32-1.05-.05-1.37-.06-4.04-.06Zm0 3.06a4.94 4.94 0 1 1 0 9.88 4.94 4.94 0 0 1 0-9.88Zm0 1.8a3.14 3.14 0 1 0 0 6.28 3.14 3.14 0 0 0 0-6.28Zm5.13-1.99a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@jj.party.rentals8" aria-label="TikTok" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.1v13.7c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5c.28 0 .55.04.8.13V10.1a5.6 5.6 0 0 0-.8-.06A5.63 5.63 0 0 0 5.5 15.7a5.63 5.63 0 0 0 5.6 5.63 5.63 5.63 0 0 0 5.6-5.63V8.4a8.1 8.1 0 0 0 4.7 1.5V6.8a4.9 4.9 0 0 1-4.8-4.8Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom" data-i18n="footer-bottom">© 2026 J&amp;J Party Rentals. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/items.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

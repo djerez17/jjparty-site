@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart — J&amp;J Party Rentals</title>
+  <meta name="description" content="Review your rental cart and request a free quote from J&J Party Rentals." />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="nav-brand" href="index.html">
+        <img src="assets/logo-nav.png" width="44" height="44" alt="J&amp;J Party Rentals logo" />
+        J&amp;J Party Rentals
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <div class="nav-links">
+        <a href="index.html" data-i18n="nav-home">Home</a>
+        <a href="shop.html" data-i18n="nav-shop">Shop Rentals</a>
+        <a href="catering.html" data-i18n="nav-catering">Catering</a>
+        <a href="about.html" data-i18n="nav-about">About</a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn active" data-lang="en">English</button>
+          <button type="button" class="lang-btn" data-lang="es">Spanish</button>
+        </div>
+      </div>
+      <a class="nav-cart" href="cart.html">
+        🛒 <span data-i18n="nav-cart">Cart</span> <span class="cart-count">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero container">
+      <h1 data-i18n="cart-h1">Your Cart</h1>
+      <p data-i18n="cart-p">Review your items below, then submit a quote request. This is a booking request only — no payment is collected here. We'll confirm availability and follow up.</p>
+    </section>
+
+    <section class="section container">
+      <div id="cart-empty" class="cart-empty" hidden>
+        <h2 data-i18n="cart-empty-h2">Your cart is empty</h2>
+        <p data-i18n="cart-empty-p">Browse our rentals and add a few items to get started.</p>
+        <a class="btn btn-primary" href="shop.html" data-i18n="cart-empty-cta">Browse Rentals</a>
+      </div>
+
+      <div id="cart-content" class="cart-layout" hidden>
+        <div class="cart-items" id="cart-items"></div>
+
+        <div class="cart-summary">
+          <h3 data-i18n="summary-h3">Order Summary</h3>
+          <div id="summary-rows"></div>
+          <div class="summary-row" id="delivery-row" hidden>
+            <span data-i18n="delivery-fee-label">Delivery Fee</span>
+            <span id="delivery-fee-display">—</span>
+          </div>
+          <div class="summary-row" id="promo-row" hidden>
+            <span data-i18n="promo-label">Promo Discount</span>
+            <span id="promo-discount-display">—</span>
+          </div>
+          <div class="summary-row total">
+            <span data-i18n="total-label">Estimated Total</span>
+            <span id="summary-total">$0</span>
+          </div>
+
+          <form id="quote-form" class="quote-form" action="https://formspree.io/f/xaqrgnnl" method="POST">
+            <div class="form-group">
+              <label for="name" data-i18n="form-name-label">Full Name</label>
+              <input type="text" id="name" name="Name" required />
+            </div>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="email" data-i18n="form-email-label">Email</label>
+                <input type="email" id="email" name="Email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone" data-i18n="form-phone-label">Phone</label>
+                <input type="tel" id="phone" name="Phone" required />
+              </div>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="event-date" data-i18n="form-date-label">Event Date</label>
+                <input type="date" id="event-date" name="Event Date" required />
+              </div>
+              <div class="form-group">
+                <label for="zip" data-i18n="form-zip-label">Event ZIP Code</label>
+                <input type="text" id="zip" name="ZIP Code" inputmode="numeric" maxlength="5" placeholder="e.g. 92553" data-i18n-placeholder="form-zip-placeholder" />
+                <p class="form-note" id="delivery-note"></p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="event-address" data-i18n="form-address-label">Event Address</label>
+              <input type="text" id="event-address" name="Event Address" />
+            </div>
+            <div class="form-group">
+              <label for="delivery-time" data-i18n="form-deliverytime-label">Preferred Delivery Time (optional)</label>
+              <select id="delivery-time" name="Preferred Delivery Time">
+                <option value="" data-i18n="deliverytime-none">No preference</option>
+                <option value="Morning (8am–12pm)" data-i18n="deliverytime-morning">Morning (8am–12pm)</option>
+                <option value="Afternoon (12pm–4pm)" data-i18n="deliverytime-afternoon">Afternoon (12pm–4pm)</option>
+                <option value="Evening (4pm–8pm)" data-i18n="deliverytime-evening">Evening (4pm–8pm)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="promo-code" data-i18n="form-promo-label">Promo Code (optional)</label>
+              <input type="text" id="promo-code" name="Promo Code" placeholder="e.g. SUMMER26" data-i18n-placeholder="form-promo-placeholder" />
+              <p class="form-note" id="promo-note"></p>
+            </div>
+            <div class="form-group">
+              <label for="notes" data-i18n="form-notes-label">Notes</label>
+              <textarea id="notes" name="Notes" rows="3" placeholder="Anything else we should know?" data-i18n-placeholder="form-notes-placeholder"></textarea>
+            </div>
+
+            <input type="hidden" name="Cart Summary" id="cart-summary-field" />
+            <input type="hidden" name="Delivery Fee" id="delivery-field" />
+            <input type="hidden" name="Promo Discount" id="promo-field" />
+            <input type="hidden" name="Estimated Total" id="total-field" />
+            <input type="hidden" name="_subject" value="New Quote Request — J&J Party Rentals" />
+
+            <button type="submit" class="btn btn-primary btn-block" id="submit-btn" data-i18n="submit-btn">Submit</button>
+            <p class="form-note" id="submit-error" style="color:#c0392b; display:none;"></p>
+            <p class="form-note" data-i18n="submit-disclaimer">By submitting, you'll receive a follow-up from us at jjrentalservices1@gmail.com or (951) 442-8155 to confirm availability and finalize your order.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <img src="assets/logo-nav.png" width="36" height="36" alt="J&amp;J Party Rentals logo" />
+            J&amp;J Party Rentals
+          </div>
+        </div>
+        <div class="footer-contact">
+          📞 <a href="tel:+19514428155">(951) 442-8155</a><br />
+          ✉️ <a href="mailto:jjrentalservices1@gmail.com">jjrentalservices1@gmail.com</a>
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/jj.partyrentals26" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94Z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/jj.party_rentals/" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2.2c2.72 0 3.05.01 4.12.06 1.07.05 1.79.22 2.43.46.66.26 1.22.6 1.77 1.15.55.55.89 1.11 1.15 1.77.24.64.41 1.36.46 2.43.05 1.07.06 1.4.06 4.12s-.01 3.05-.06 4.12c-.05 1.07-.22 1.79-.46 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.24-1.36.41-2.43.46-1.07.05-1.4.06-4.12.06s-3.05-.01-4.12-.06c-1.07-.05-1.79-.22-2.43-.46a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.24-.64-.41-1.36-.46-2.43C2.21 15.05 2.2 14.72 2.2 12s.01-3.05.06-4.12c.05-1.07.22-1.79.46-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.64 2.53c.64-.24 1.36-.41 2.43-.46C8.95 2.21 9.28 2.2 12 2.2Zm0 1.8c-2.67 0-2.99.01-4.04.06-.92.04-1.42.19-1.75.32-.44.17-.75.37-1.08.7-.33.33-.53.64-.7 1.08-.13.33-.28.83-.32 1.75-.05 1.05-.06 1.37-.06 4.04s.01 2.99.06 4.04c.04.92.19 1.42.32 1.75.17.44.37.75.7 1.08.33.33.64.53 1.08.7.33.13.83.28 1.75.32 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.92-.04 1.42-.19 1.75-.32.44-.17.75-.37 1.08-.7.33-.33.53-.64.7-1.08.13-.33.28-.83.32-1.75.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.92-.19-1.42-.32-1.75a2.9 2.9 0 0 0-.7-1.08 2.9 2.9 0 0 0-1.08-.7c-.33-.13-.83-.28-1.75-.32-1.05-.05-1.37-.06-4.04-.06Zm0 3.06a4.94 4.94 0 1 1 0 9.88 4.94 4.94 0 0 1 0-9.88Zm0 1.8a3.14 3.14 0 1 0 0 6.28 3.14 3.14 0 0 0 0-6.28Zm5.13-1.99a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@jj.party.rentals8" aria-label="TikTok" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.1v13.7c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5c.28 0 .55.04.8.13V10.1a5.6 5.6 0 0 0-.8-.06A5.63 5.63 0 0 0 5.5 15.7a5.63 5.63 0 0 0 5.6 5.63 5.63 5.63 0 0 0 5.6-5.63V8.4a8.1 8.1 0 0 0 4.7 1.5V6.8a4.9 4.9 0 0 1-4.8-4.8Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom" data-i18n="footer-bottom">© 2026 J&amp;J Party Rentals. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/items.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/delivery.js"></script>
+  <script src="js/cart-page.js"></script>
+</body>
+</html>
