@@ -311,13 +311,14 @@ function wireItemCards() {
         ? `${translatedItemName(item.id, "es")} (${labelPartsEs.join(", ")})`
         : translatedItemName(item.id, "es");
 
+      const isCatering = item.category === "catering";
       addToCart(
         {
           id: item.id,
           name,
           nameEs,
-          dims: item.dims,
-          dimsEs: translatedItemDims(item.id, "es"),
+          dims: isCatering ? "" : item.dims,
+          dimsEs: isCatering ? "" : translatedItemDims(item.id, "es"),
           price: currentPrice(),
           variant
         },
