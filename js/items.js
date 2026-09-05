@@ -196,9 +196,9 @@ const CATALOG = [
       "3 Meats: Beef, Chicken, Pork",
       "Mexican Rice",
       "Choice of Beans",
-      "2 Sauces: Green, Red",
-      "2 Toppings: Onions, Cilantro",
-      "1 Drink: Horchata"
+      "Choice of 2 Sauces: Green/Red/Avocado",
+      "Choice of 2 Toppings: Onions/Cilantro/Lime Wedges/Pickled Red Onion/Pico De Gallo",
+      "Choice of 1 Drink: Horchata/Jamaica/Cucumber"
     ],
     sizes: [
       { id: "30", label: "30 Guests", price: 575 },
@@ -232,9 +232,9 @@ const CATALOG = [
       "Mexican Rice",
       "Choice of Beans",
       "3 Sauces: Green, Red, Avocado",
-      "4 Toppings: Onions, Cilantro, Lime Wedges, Pickled Red Onion",
-      "2 Drinks: Horchata, Jamaica",
-      "1 Dessert: Strawberry Banana Parfait"
+      "Choice of 4 Toppings: Onions/Cilantro/Lime Wedges/Pickled Red Onion/Pico de Gallo",
+      "Choice of 2 Drinks: Horchata/Jamaica/Cucumber",
+      "Choice of 1 Dessert: Strawberry Banana Parfait/Rice Milk Pudding"
     ],
     sizes: [
       { id: "30", label: "30 Guests", price: 650 },
@@ -246,11 +246,12 @@ const CATALOG = [
       { id: "90", label: "90 Guests", price: 1950 },
       { id: "100", label: "100 Guests", price: 2165 }
     ],
+    scaleExtrasWithGuests: true,
     extras: [
-      { name: "Regular Hot Dogs", price: 140 },
-      { name: "Bacon Wrapped Hot Dogs", price: 180 },
-      { name: "Fruit Platter", price: 110 },
-      { name: "Esquites", price: 500 }
+      { name: "Regular Hot Dogs", price: 75 },
+      { name: "Bacon Wrapped Hot Dogs", price: 100 },
+      { name: "Fruit Platter", price: 70 },
+      { name: "Esquites", price: 300 }
     ]
   },
   {
@@ -281,11 +282,12 @@ const CATALOG = [
       { id: "90", label: "90 Guests", price: 2400 },
       { id: "100", label: "100 Guests", price: 2665 }
     ],
+    scaleExtrasWithGuests: true,
     extras: [
-      { name: "Regular Hot Dogs", price: 190 },
-      { name: "Bacon Wrapped Hot Dogs", price: 250 },
-      { name: "Fruit Platter", price: 150 },
-      { name: "Esquites", price: 750 }
+      { name: "Regular Hot Dogs", price: 75 },
+      { name: "Bacon Wrapped Hot Dogs", price: 100 },
+      { name: "Fruit Platter", price: 70 },
+      { name: "Esquites", price: 300 }
     ]
   }
 ];
@@ -351,7 +353,7 @@ const BUNDLES = [
     id: "bundle-taco-standard",
     name: "Standard Taco Bundle",
     tag: "Most Popular",
-    price: 900,
+    price: 1050,
     discount: 100,
     guests: 50,
     items: [
@@ -365,9 +367,9 @@ const BUNDLES = [
     id: "bundle-taco-premium",
     name: "Premium Taco Bundle",
     tag: "Full-Service",
-    price: 1400,
+    price: 1800,
     discount: 150,
-    guests: 75,
+    guests: 70,
     items: [
       { id: "taco-catering-premium", qty: 1 },
       { id: "rect-table", qty: 10, altId: "round-table", altQty: 8 },

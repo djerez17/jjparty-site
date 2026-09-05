@@ -105,6 +105,10 @@ const I18N = {
     en: "Fresh, made-to-order taco bars for any size gathering. Pick a package below and we'll handle the rest. If the number of guests you're expecting isn't an option, contact us and we'll give you a quote.",
     es: "Barras de tacos frescas, preparadas al momento, para cualquier tamaño de evento. Elige un paquete abajo y nosotros nos encargamos del resto. Si la cantidad de invitados que esperas no es una opción, contáctanos y te daremos una cotización."
   },
+  "catering-disclaimer": {
+    en: "Don't see a drink or sauce you like? Let us know — we're happy to swap in the ones you prefer.",
+    es: "¿No ves una bebida o salsa de tu preferencia? Avísanos — con gusto la cambiamos por la que prefieras."
+  },
 
   "filter-all": { en: "All Items", es: "Todos los Artículos" },
   "filter-tables": { en: "Tables", es: "Mesas" },
@@ -274,9 +278,9 @@ const CATALOG_ES = {
       "3 Carnes: Carne Asada, Pollo, Al Pastor",
       "Arroz Mexicano",
       "Elección de Frijoles",
-      "2 Salsas: Verde, Roja",
-      "2 Toppings: Cebolla, Cilantro",
-      "1 Bebida: Horchata"
+      "Elección de 2 Salsas: Verde/Roja/Aguacate",
+      "Elección de 2 Toppings: Cebolla/Cilantro/Limón/Cebolla Morada Encurtida/Pico de Gallo",
+      "Elección de 1 Bebida: Horchata/Jamaica/Pepino"
     ],
     sizes: {
       "30": "30 Invitados",
@@ -299,9 +303,9 @@ const CATALOG_ES = {
       "Arroz Mexicano",
       "Elección de Frijoles",
       "3 Salsas: Verde, Roja, Aguacate",
-      "4 Toppings: Cebolla, Cilantro, Limón, Cebolla Morada Encurtida",
-      "2 Bebidas: Horchata, Jamaica",
-      "1 Postre: Parfait de Fresa y Plátano"
+      "Elección de 4 Toppings: Cebolla/Cilantro/Limón/Cebolla Morada Encurtida/Pico de Gallo",
+      "Elección de 2 Bebidas: Horchata/Jamaica/Pepino",
+      "Elección de 1 Postre: Parfait de Fresa y Plátano/Arroz con Leche"
     ],
     sizes: {
       "30": "30 Invitados",
