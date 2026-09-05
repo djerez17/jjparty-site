@@ -188,7 +188,7 @@ const CATALOG = [
     name: "Basic Taco Catering",
     category: "catering",
     icon: "🌮",
-    dims: "Serves up to 30 guests",
+    dims: "Serves 30–100 guests",
     price: 575,
     stock: 5,
     desc: "Chicken and beef tacos on corn or flour tortillas, with rice, beans, and a classic salsa bar — salsa roja, salsa verde, onions, cilantro, and lime.",
@@ -200,6 +200,17 @@ const CATALOG = [
       "2 Toppings: Onions, Cilantro",
       "1 Drink: Horchata"
     ],
+    sizes: [
+      { id: "30", label: "30 Guests", price: 575 },
+      { id: "40", label: "40 Guests", price: 765 },
+      { id: "50", label: "50 Guests", price: 960 },
+      { id: "60", label: "60 Guests", price: 1150 },
+      { id: "70", label: "70 Guests", price: 1340 },
+      { id: "80", label: "80 Guests", price: 1535 },
+      { id: "90", label: "90 Guests", price: 1725 },
+      { id: "100", label: "100 Guests", price: 1915 }
+    ],
+    scaleExtrasWithGuests: true,
     extras: [
       { name: "Regular Hot Dogs", price: 75 },
       { name: "Bacon Wrapped Hot Dogs", price: 100 },
@@ -212,8 +223,8 @@ const CATALOG = [
     name: "Standard Taco Catering",
     category: "catering",
     icon: "🌮🌮",
-    dims: "Serves up to 50 guests",
-    price: 900,
+    dims: "Serves 30–100 guests",
+    price: 650,
     stock: 3,
     desc: "Everything in the Basic package, plus carne asada, guacamole, tortilla chips, and your choice of horchata or agua fresca.",
     details: [
@@ -224,6 +235,16 @@ const CATALOG = [
       "4 Toppings: Onions, Cilantro, Lime Wedges, Pickled Red Onion",
       "2 Drinks: Horchata, Jamaica",
       "1 Dessert: Strawberry Banana Parfait"
+    ],
+    sizes: [
+      { id: "30", label: "30 Guests", price: 650 },
+      { id: "40", label: "40 Guests", price: 865 },
+      { id: "50", label: "50 Guests", price: 1085 },
+      { id: "60", label: "60 Guests", price: 1300 },
+      { id: "70", label: "70 Guests", price: 1515 },
+      { id: "80", label: "80 Guests", price: 1735 },
+      { id: "90", label: "90 Guests", price: 1950 },
+      { id: "100", label: "100 Guests", price: 2165 }
     ],
     extras: [
       { name: "Regular Hot Dogs", price: 140 },
@@ -237,8 +258,8 @@ const CATALOG = [
     name: "Premium Taco Catering",
     category: "catering",
     icon: "🌮🌮🌮",
-    dims: "Serves up to 75 guests",
-    price: 1300,
+    dims: "Serves 30–100 guests",
+    price: 800,
     stock: 2,
     desc: "Our full taco bar experience: carne asada, al pastor, and shrimp tacos, a loaded salsa and toppings bar, chips and guacamole, horchata, and churros for dessert.",
     details: [
@@ -249,6 +270,16 @@ const CATALOG = [
       "5 Toppings: Onions, Cilantro, Lime Wedges, Pickled Red Onion, Pico de Gallo",
       "3 Drinks: Horchata, Jamaica, Cucumber",
       "2 Desserts: Strawberry Banana Parfait, Rice Milk Pudding"
+    ],
+    sizes: [
+      { id: "30", label: "30 Guests", price: 800 },
+      { id: "40", label: "40 Guests", price: 1065 },
+      { id: "50", label: "50 Guests", price: 1335 },
+      { id: "60", label: "60 Guests", price: 1600 },
+      { id: "70", label: "70 Guests", price: 1865 },
+      { id: "80", label: "80 Guests", price: 2135 },
+      { id: "90", label: "90 Guests", price: 2400 },
+      { id: "100", label: "100 Guests", price: 2665 }
     ],
     extras: [
       { name: "Regular Hot Dogs", price: 190 },

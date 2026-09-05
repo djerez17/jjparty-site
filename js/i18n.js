@@ -268,7 +268,7 @@ const CATALOG_ES = {
   },
   "taco-catering-basic": {
     name: "Catering de Tacos Básico",
-    dims: "Sirve hasta 30 invitados",
+    dims: "Sirve de 30 a 100 invitados",
     desc: "Tacos de pollo y res en tortillas de maíz o harina, con arroz, frijoles y una barra de salsas clásica — salsa roja, salsa verde, cebolla, cilantro y limón.",
     details: [
       "3 Carnes: Carne Asada, Pollo, Al Pastor",
@@ -278,11 +278,21 @@ const CATALOG_ES = {
       "2 Toppings: Cebolla, Cilantro",
       "1 Bebida: Horchata"
     ],
+    sizes: {
+      "30": "30 Invitados",
+      "40": "40 Invitados",
+      "50": "50 Invitados",
+      "60": "60 Invitados",
+      "70": "70 Invitados",
+      "80": "80 Invitados",
+      "90": "90 Invitados",
+      "100": "100 Invitados"
+    },
     extras: ["Hot Dogs Regulares", "Hot Dogs Envueltos en Tocino", "Plato de Frutas", "Esquites"]
   },
   "taco-catering-standard": {
     name: "Catering de Tacos Estándar",
-    dims: "Sirve hasta 50 invitados",
+    dims: "Sirve de 30 a 100 invitados",
     desc: "Todo lo del paquete Básico, más carne asada, guacamole, totopos y tu elección de horchata o agua fresca.",
     details: [
       "3 Carnes: Carne Asada, Pollo, Al Pastor",
@@ -293,11 +303,21 @@ const CATALOG_ES = {
       "2 Bebidas: Horchata, Jamaica",
       "1 Postre: Parfait de Fresa y Plátano"
     ],
+    sizes: {
+      "30": "30 Invitados",
+      "40": "40 Invitados",
+      "50": "50 Invitados",
+      "60": "60 Invitados",
+      "70": "70 Invitados",
+      "80": "80 Invitados",
+      "90": "90 Invitados",
+      "100": "100 Invitados"
+    },
     extras: ["Hot Dogs Regulares", "Hot Dogs Envueltos en Tocino", "Plato de Frutas", "Esquites"]
   },
   "taco-catering-premium": {
     name: "Catering de Tacos Premium",
-    dims: "Sirve hasta 75 invitados",
+    dims: "Sirve de 30 a 100 invitados",
     desc: "Nuestra experiencia completa de barra de tacos: carne asada, al pastor y tacos de camarón, una barra cargada de salsas y aderezos, totopos y guacamole, horchata y churros de postre.",
     details: [
       "3 Carnes: Carne Asada, Pollo, Al Pastor",
@@ -308,6 +328,16 @@ const CATALOG_ES = {
       "3 Bebidas: Horchata, Jamaica, Pepino",
       "2 Postres: Parfait de Fresa y Plátano, Arroz con Leche"
     ],
+    sizes: {
+      "30": "30 Invitados",
+      "40": "40 Invitados",
+      "50": "50 Invitados",
+      "60": "60 Invitados",
+      "70": "70 Invitados",
+      "80": "80 Invitados",
+      "90": "90 Invitados",
+      "100": "100 Invitados"
+    },
     extras: ["Hot Dogs Regulares", "Hot Dogs Envueltos en Tocino", "Plato de Frutas", "Esquites"]
   }
 };
@@ -351,6 +381,12 @@ function translatedColors(item, lang) {
   const es = CATALOG_ES[item.id] && CATALOG_ES[item.id].colors;
   if (lang !== "es" || !es) return item.colors;
   return item.colors.map((c) => ({ id: c.id, label: es[c.id].label, detail: es[c.id].detail }));
+}
+
+function translatedSizes(item, lang) {
+  const es = CATALOG_ES[item.id] && CATALOG_ES[item.id].sizes;
+  if (lang !== "es" || !es) return item.sizes;
+  return item.sizes.map((s) => ({ id: s.id, label: es[s.id], price: s.price }));
 }
 
 function translatedMaterialLabel(item, materialId, lang) {

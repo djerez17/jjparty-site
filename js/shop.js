@@ -7,6 +7,7 @@ const SHOP_LABELS = {
   size: { en: "Size", es: "Tamaño" },
   material: { en: "Material", es: "Material" },
   number: { en: "Number", es: "Número" },
+  guestCount: { en: "Number of Guests", es: "Número de Invitados" },
   dry: { en: "Dry", es: "Seco" },
   wet: { en: "Wet", es: "Húmedo" },
   perRental: { en: " / per rental", es: " / por renta" },
@@ -22,6 +23,13 @@ function shopLabel(key, lang) {
 
 function priceUnitLabel(item, lang) {
   return shopLabel(item.category === "catering" ? "perCatering" : "perRental", lang);
+}
+
+function scaledExtraPrice(item, basePrice, sizeSelect) {
+  if (!item.scaleExtrasWithGuests || !item.sizes || !sizeSelect) return basePrice;
+  const baseGuests = parseInt(item.sizes[0].id, 10);
+  const guests = parseInt(sizeSelect.value, 10);
+  return Math.round((basePrice * guests) / baseGuests / 5) * 5;
 }
 
 function itemCardHTML(item, lang) {
@@ -63,9 +71,9 @@ function itemCardHTML(item, lang) {
 
   const sizeSelect = item.sizes
     ? `<div class="item-mode">
-         <label for="size-${item.id}">${shopLabel("size", lang)}</label>
+         <label for="size-${item.id}">${shopLabel(item.category === "catering" ? "guestCount" : "size", lang)}</label>
          <select id="size-${item.id}" data-size-select data-id="${item.id}">
-           ${item.sizes
+           ${translatedSizes(item, lang)
              .map(
                (s) =>
                  `<option value="${s.id}">${item.hideSizePrices ? s.label : `${s.label} — ${formatMoney(s.price)}`}</option>`
@@ -113,7 +121,7 @@ function itemCardHTML(item, lang) {
                        <label class="extra-option" for="extra-${item.id}-${i}">
                          <input type="checkbox" id="extra-${item.id}-${i}" data-extra-checkbox data-index="${i}" />
                          <span class="extra-name">${e.name}</span>
-                         <span class="extra-price">+${formatMoney(e.price)}</span>
+                         <span class="extra-price" data-extra-price-display data-index="${i}">+${formatMoney(e.price)}</span>
                        </label>
                      </li>`
                    )
@@ -174,6 +182,7 @@ function wireItemCards() {
     const numberSelect = card.querySelector("[data-number-select]");
     const materialSelect = card.querySelector("[data-material-select]");
     const extraCheckboxes = card.querySelectorAll("[data-extra-checkbox]");
+    const extraPriceDisplays = card.querySelectorAll("[data-extra-price-display]");
     const flash = card.querySelector("[data-added-flash]");
 
     const basePrice = () => {
@@ -189,13 +198,22 @@ function wireItemCards() {
       return item.price;
     };
 
+    const extraPriceFor = (idx) => scaledExtraPrice(item, item.extras[idx].price, sizeSelect);
+
     const extrasTotal = () => {
       if (!item.extras) return 0;
       let total = 0;
       extraCheckboxes.forEach((cb) => {
-        if (cb.checked) total += item.extras[parseInt(cb.dataset.index, 10)].price;
+        if (cb.checked) total += extraPriceFor(parseInt(cb.dataset.index, 10));
       });
       return total;
+    };
+
+    const refreshExtraPrices = () => {
+      extraPriceDisplays.forEach((el) => {
+        const idx = parseInt(el.dataset.index, 10);
+        el.textContent = `+${formatMoney(extraPriceFor(idx))}`;
+      });
     };
 
     const currentPrice = () => basePrice() + extrasTotal();
@@ -227,7 +245,11 @@ function wireItemCards() {
     };
 
     if (modeSelect) modeSelect.addEventListener("change", refreshPrice);
-    if (sizeSelect) sizeSelect.addEventListener("change", refreshPrice);
+    if (sizeSelect)
+      sizeSelect.addEventListener("change", () => {
+        refreshExtraPrices();
+        refreshPrice();
+      });
     if (materialSelect) materialSelect.addEventListener("change", refreshPrice);
     extraCheckboxes.forEach((cb) => cb.addEventListener("change", refreshPrice));
 
@@ -252,9 +274,10 @@ function wireItemCards() {
         labelPartsEs.push(colorEs.label);
       } else if (item.sizes) {
         const size = item.sizes.find((s) => s.id === sizeSelect.value);
+        const sizeEs = translatedSizes(item, "es").find((s) => s.id === sizeSelect.value);
         variantParts.push(size.id);
         labelPartsEn.push(size.label);
-        labelPartsEs.push(size.label);
+        labelPartsEs.push(sizeEs.label);
       }
 
       if (item.materials) {
