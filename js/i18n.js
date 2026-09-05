@@ -67,12 +67,12 @@ const I18N = {
   "about-signature-title": { en: "Founder, J&J Party Rentals", es: "Fundador, J&J Party Rentals" },
 
   "promo-title": {
-    en: "🎉 Summer Special — Free delivery on orders over $300",
-    es: "🎉 Especial de Verano — Entrega gratis en pedidos mayores a $300"
+    en: "🎉 Fall Special",
+    es: "🎉 Especial de Otoño"
   },
   "promo-desc": {
-    en: "Mention code SUMMER26 when you request your quote.",
-    es: "Menciona el código SUMMER26 al solicitar tu cotización."
+    en: "Mention Code FALL26 when you request your quote and get 5% off custom made bundles.",
+    es: "Menciona el Código FALL26 al solicitar tu cotización y obtén 5% de descuento en paquetes personalizados."
   },
 
   "bundles-h2": { en: "Popular Bundles", es: "Paquetes Populares" },
@@ -161,7 +161,7 @@ const I18N = {
 /* Placeholder text (data-i18n-placeholder, since <input placeholder> isn't a text node). */
 const I18N_PLACEHOLDER = {
   "form-zip-placeholder": { en: "e.g. 92553", es: "ej. 92553" },
-  "form-promo-placeholder": { en: "e.g. SUMMER26", es: "ej. SUMMER26" },
+  "form-promo-placeholder": { en: "e.g. FALL26", es: "ej. FALL26" },
   "form-notes-placeholder": { en: "Anything else we should know?", es: "¿Algo más que debamos saber?" }
 };
 
@@ -174,7 +174,7 @@ const CATEGORY_I18N = {
 
 const BUNDLE_I18N = {
   "bundle-birthday": { name: "Paquete de Cumpleaños", tag: "Más Popular" },
-  "bundle-splash": { name: "Paquete Splash", tag: "Favorito de Verano" },
+  "bundle-splash": { name: "Paquete Splash", tag: "Favorito de Otoño" },
   "bundle-kids": { name: "Inicio Fiesta Infantil", tag: "Mejor Valor" },
   "bundle-taco-basic": { name: "Paquete de Tacos Básico", tag: "Reuniones Pequeñas", note: "Para ver qué incluye este paquete de catering, visita la <a href='catering.html'>página de Catering</a>." },
   "bundle-taco-standard": { name: "Paquete de Tacos Estándar", tag: "Más Popular", note: "Para ver qué incluye este paquete de catering, visita la <a href='catering.html'>página de Catering</a>." },

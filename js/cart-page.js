@@ -4,7 +4,7 @@
 let deliveryState = { status: "none" };
 let promoState = { applied: false };
 
-const PROMO_CODES = { SUMMER26: 0.05 };
+const PROMO_CODES = { FALL26: 0.05 };
 
 const CART_LABELS = {
   each: { en: "each", es: "c/u" },
@@ -105,12 +105,12 @@ function updateTotals() {
     if (promoNote) promoNote.textContent = cartLabel("promoBundleBlocked", lang);
   }
 
-  const discount = promoState.applied ? subtotal * PROMO_CODES.SUMMER26 : 0;
+  const discount = promoState.applied ? subtotal * PROMO_CODES.FALL26 : 0;
   const discountedSubtotal = subtotal - discount;
 
   promoRow.hidden = !promoState.applied;
   promoDisplay.textContent = discount > 0 ? `-${formatMoney(discount)}` : "—";
-  promoField.value = promoState.applied ? `SUMMER26 (-${formatMoney(discount)})` : "None";
+  promoField.value = promoState.applied ? `FALL26 (-${formatMoney(discount)})` : "None";
 
   let deliveryFeeText = "—";
   let deliveryFieldValue = "Not calculated";

@@ -51,7 +51,7 @@ function bundleCardHTML(bundle) {
       ${bundle.guests ? `<span class="bundle-guests">${lang === "es" ? `Sirve hasta ${bundle.guests} invitados` : `Serves up to ${bundle.guests} guests`}</span>` : ""}
       <div class="bundle-price-row">
         <span class="bundle-price">${formatMoney(bundle.price)}</span>
-        <span class="bundle-price-old" ${savings > 0 ? "" : 'style="display:none"'}>${formatMoney(regular)}</span>
+        <span class="bundle-price-old" ${savings !== 0 ? "" : 'style="display:none"'}>${formatMoney(regular)}</span>
       </div>
       <ul class="bundle-items">
         ${bundle.items.map((entry) => `<li>${bundleItemLabel(entry)}</li>`).join("")}
@@ -174,7 +174,7 @@ function renderBundlesAndCategories() {
         const savings = regular - bundle.price;
         const oldPriceEl = card.querySelector(".bundle-price-old");
         oldPriceEl.textContent = formatMoney(regular);
-        oldPriceEl.style.display = savings > 0 ? "" : "none";
+        oldPriceEl.style.display = savings !== 0 ? "" : "none";
       });
     });
     bundleGrid.querySelectorAll("[data-add-bundle]").forEach((btn) => {

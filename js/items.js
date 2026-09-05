@@ -304,7 +304,7 @@ const BUNDLES = [
     id: "bundle-birthday",
     name: "Backyard Birthday Bundle",
     tag: "Most Popular",
-    price: 199,
+    price: 200,
     discount: 20,
     items: [
       { id: "jumper-classic", qty: 1 },
@@ -315,8 +315,8 @@ const BUNDLES = [
   {
     id: "bundle-splash",
     name: "Splash Bash Bundle",
-    tag: "Summer Favorite",
-    price: 369,
+    tag: "Fall Favorite",
+    price: 370,
     discount: 20,
     items: [
       { id: "jumper-combo", qty: 1, mode: "wet" },
@@ -328,7 +328,7 @@ const BUNDLES = [
     id: "bundle-kids",
     name: "Kids Party Starter",
     tag: "Great Value",
-    price: 129,
+    price: 130,
     items: [
       { id: "jumper-slide", qty: 1 },
       { id: "kids-table", qty: 2 },
@@ -339,8 +339,8 @@ const BUNDLES = [
     id: "bundle-taco-basic",
     name: "Basic Taco Bundle",
     tag: "Small Gatherings",
-    price: 700,
-    discount: 50,
+    price: 630,
+    discount: 49,
     guests: 30,
     items: [
       { id: "taco-catering-basic", qty: 1 },
@@ -354,7 +354,7 @@ const BUNDLES = [
     name: "Standard Taco Bundle",
     tag: "Most Popular",
     price: 1050,
-    discount: 100,
+    discount: 199,
     guests: 50,
     items: [
       { id: "taco-catering-standard", qty: 1 },
@@ -368,7 +368,7 @@ const BUNDLES = [
     name: "Premium Taco Bundle",
     tag: "Full-Service",
     price: 1800,
-    discount: 150,
+    discount: 295,
     guests: 70,
     items: [
       { id: "taco-catering-premium", qty: 1 },
