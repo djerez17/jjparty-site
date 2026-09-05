@@ -27,17 +27,22 @@ function saveCart(cart) {
   updateCartBadge();
 }
 
-function addToCart({ id, name, nameEs, dims, dimsEs, price, variant }, qty) {
+function addToCart({ id, name, nameEs, dims, dimsEs, price, variant, fromBundle }, qty) {
   if (qty < 1) return;
   const cart = getCart();
   const key = cartLineKey(id, variant);
   const existing = cart.find((line) => line.key === key);
   if (existing) {
     existing.qty += qty;
+    if (fromBundle) existing.fromBundle = true;
   } else {
-    cart.push({ key, id, name, nameEs, dims, dimsEs, price, qty });
+    cart.push({ key, id, name, nameEs, dims, dimsEs, price, qty, fromBundle: !!fromBundle });
   }
   saveCart(cart);
+}
+
+function cartHasBundleItem(cart) {
+  return (cart || getCart()).some((line) => line.fromBundle);
 }
 
 function removeFromCart(key) {

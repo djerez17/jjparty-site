@@ -20,7 +20,11 @@ const CART_LABELS = {
     es: "Algo salió mal al enviar tu solicitud. Intenta de nuevo, o escríbenos directamente a jjrentalservices1@gmail.com."
   },
   promoApplied: { en: (pct) => `Code applied — ${pct}% off your order.`, es: (pct) => `Código aplicado — ${pct}% de descuento en tu pedido.` },
-  promoUnrecognized: { en: "Code not recognized.", es: "Código no reconocido." }
+  promoUnrecognized: { en: "Code not recognized.", es: "Código no reconocido." },
+  promoBundleBlocked: {
+    en: "Promo codes can't be combined with a pre-made bundle. Remove the bundle items to apply a code.",
+    es: "Los códigos promocionales no se pueden combinar con un paquete prearmado. Elimina los artículos del paquete para aplicar un código."
+  }
 };
 
 function cartLabel(key, lang) {
@@ -36,11 +40,12 @@ function cartLineDims(line, lang) {
 }
 
 function cartRowHTML(line, lang) {
+  const dims = cartLineDims(line, lang);
   return `
     <div class="cart-row" data-key="${line.key}">
       <div class="cart-row-info">
         <h4>${cartLineName(line, lang)}</h4>
-        <span>${cartLineDims(line, lang)} · ${formatMoney(line.price)} ${cartLabel("each", lang)}</span>
+        ${dims ? `<span>${dims} · ${formatMoney(line.price)} ${cartLabel("each", lang)}</span>` : ""}
       </div>
       <div class="qty-stepper">
         <button type="button" data-qty-minus aria-label="${cartLabel("decreaseQty", lang)}">−</button>
@@ -91,6 +96,14 @@ function updateTotals() {
   const deliveryField = document.getElementById("delivery-field");
   const promoField = document.getElementById("promo-field");
   const totalField = document.getElementById("total-field");
+
+  if (promoState.applied && cartHasBundleItem(cart)) {
+    promoState = { applied: false };
+    const promoInput = document.getElementById("promo-code");
+    const promoNote = document.getElementById("promo-note");
+    if (promoInput) promoInput.value = "";
+    if (promoNote) promoNote.textContent = cartLabel("promoBundleBlocked", lang);
+  }
 
   const discount = promoState.applied ? subtotal * PROMO_CODES.SUMMER26 : 0;
   const discountedSubtotal = subtotal - discount;
@@ -211,6 +224,13 @@ function initPromoCode() {
     if (!code) {
       promoState = { applied: false };
       note.textContent = "";
+      updateTotals();
+      return;
+    }
+
+    if (cartHasBundleItem()) {
+      promoState = { applied: false };
+      note.textContent = cartLabel("promoBundleBlocked", lang);
       updateTotals();
       return;
     }

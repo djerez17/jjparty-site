@@ -122,15 +122,17 @@ function addBundleToCart(bundle, tableOptionId, extraIndexes) {
     const modeLabelEs = entry.mode ? ` (${entry.mode === "wet" ? "Húmedo" : "Seco"})` : "";
     const name = `${item.name}${modeLabelEn}`;
     const nameEs = `${translatedItemName(item.id, "es")}${modeLabelEs}`;
+    const isCatering = item.category === "catering";
     addToCart(
       {
         id: item.id,
         name,
         nameEs,
-        dims: item.dims,
-        dimsEs: translatedItemDims(item.id, "es"),
+        dims: isCatering ? "" : item.dims,
+        dimsEs: isCatering ? "" : translatedItemDims(item.id, "es"),
         price,
-        variant: entry.mode
+        variant: entry.mode,
+        fromBundle: true
       },
       entry.qty
     );
@@ -149,7 +151,8 @@ function addBundleToCart(bundle, tableOptionId, extraIndexes) {
           nameEs: extraEs.name,
           dims: "",
           dimsEs: "",
-          price: extra.price
+          price: extra.price,
+          fromBundle: true
         },
         1
       );
