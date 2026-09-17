@@ -273,11 +273,9 @@ const CATALOG_ES = {
   "taco-catering-basic": {
     name: "Catering de Tacos Básico",
     dims: "Sirve de 30 a 100 invitados",
-    desc: "Tacos de pollo y res en tortillas de maíz o harina, con arroz, frijoles y una barra de salsas clásica — salsa roja, salsa verde, cebolla, cilantro y limón.",
+    desc: "Tacos de pollo y res en tortillas de maíz o harina, con una barra de salsas clásica — salsa roja, salsa verde, cebolla, cilantro y limón.",
     details: [
       "3 Carnes: Carne Asada, Pollo, Al Pastor",
-      "Arroz Mexicano",
-      "Elección de Frijoles",
       "Elección de 2 Salsas: Verde/Roja/Aguacate",
       "Elección de 2 Toppings: Cebolla/Cilantro/Limón/Cebolla Morada Encurtida/Pico de Gallo",
       "Elección de 1 Bebida: Horchata/Jamaica/Pepino"
@@ -330,7 +328,8 @@ const CATALOG_ES = {
       "3 Salsas: Verde, Roja, Aguacate",
       "5 Toppings: Cebolla, Cilantro, Limón, Cebolla Morada Encurtida, Pico de Gallo",
       "3 Bebidas: Horchata, Jamaica, Pepino",
-      "2 Postres: Parfait de Fresa y Plátano, Arroz con Leche"
+      "2 Postres: Parfait de Fresa y Plátano, Arroz con Leche",
+      "1 Ensalada"
     ],
     sizes: {
       "30": "30 Invitados",
