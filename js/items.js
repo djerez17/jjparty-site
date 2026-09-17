@@ -189,24 +189,27 @@ const CATALOG = [
     category: "catering",
     icon: "🌮",
     dims: "Serves 30–100 guests",
-    price: 480,
+    price: 550,
     stock: 5,
-    desc: "Chicken and beef tacos on corn or flour tortillas, with a classic salsa bar — salsa roja, salsa verde, onions, cilantro, and lime.",
+    desc: "Chicken and beef tacos on corn or flour tortillas, with rice, beans, and a classic salsa bar — salsa roja, salsa verde, onions, cilantro, and lime.",
     details: [
       "3 Meats: Beef, Chicken, Pork",
+      "Mexican Rice",
+      "Choice of Beans",
       "Choice of 2 Sauces: Green/Red/Avocado",
       "Choice of 2 Toppings: Onions/Cilantro/Lime Wedges/Pickled Red Onion/Pico De Gallo",
-      "Choice of 1 Drink: Horchata/Jamaica/Cucumber"
+      "Chips and Guacamole",
+      "Choice of 1 Drink: Horchata/Jamaica/Cucumber/Lemonade"
     ],
     sizes: [
-      { id: "30", label: "30 Guests", price: 480 },
-      { id: "40", label: "40 Guests", price: 640 },
-      { id: "50", label: "50 Guests", price: 799 },
-      { id: "60", label: "60 Guests", price: 959 },
-      { id: "70", label: "70 Guests", price: 1119 },
-      { id: "80", label: "80 Guests", price: 1279 },
-      { id: "90", label: "90 Guests", price: 1439 },
-      { id: "100", label: "100 Guests", price: 1598 }
+      { id: "30", label: "30 Guests", price: 550 },
+      { id: "40", label: "40 Guests", price: 650 },
+      { id: "50", label: "50 Guests", price: 750 },
+      { id: "60", label: "60 Guests", price: 800 },
+      { id: "70", label: "70 Guests", price: 900 },
+      { id: "80", label: "80 Guests", price: 1000 },
+      { id: "90", label: "90 Guests", price: 1100 },
+      { id: "100", label: "100 Guests", price: 1200 }
     ],
     scaleExtrasWithGuests: true,
     extras: [
@@ -222,7 +225,7 @@ const CATALOG = [
     category: "catering",
     icon: "🌮🌮",
     dims: "Serves 30–100 guests",
-    price: 570,
+    price: 650,
     stock: 3,
     desc: "Everything in the Basic package, plus carne asada, guacamole, tortilla chips, and your choice of horchata or agua fresca.",
     details: [
@@ -231,18 +234,19 @@ const CATALOG = [
       "Choice of Beans",
       "3 Sauces: Green, Red, Avocado",
       "Choice of 4 Toppings: Onions/Cilantro/Lime Wedges/Pickled Red Onion/Pico de Gallo",
-      "Choice of 2 Drinks: Horchata/Jamaica/Cucumber",
+      "Chips and Guacamole",
+      "Choice of 2 Drinks: Horchata/Jamaica/Cucumber/Lemonade",
       "Choice of 1 Dessert: Strawberry Banana Parfait/Rice Milk Pudding"
     ],
     sizes: [
-      { id: "30", label: "30 Guests", price: 570 },
-      { id: "40", label: "40 Guests", price: 760 },
-      { id: "50", label: "50 Guests", price: 950 },
-      { id: "60", label: "60 Guests", price: 1140 },
-      { id: "70", label: "70 Guests", price: 1330 },
-      { id: "80", label: "80 Guests", price: 1520 },
-      { id: "90", label: "90 Guests", price: 1710 },
-      { id: "100", label: "100 Guests", price: 1900 }
+      { id: "30", label: "30 Guests", price: 650 },
+      { id: "40", label: "40 Guests", price: 750 },
+      { id: "50", label: "50 Guests", price: 850 },
+      { id: "60", label: "60 Guests", price: 900 },
+      { id: "70", label: "70 Guests", price: 1025 },
+      { id: "80", label: "80 Guests", price: 1150 },
+      { id: "90", label: "90 Guests", price: 1275 },
+      { id: "100", label: "100 Guests", price: 1400 }
     ],
     scaleExtrasWithGuests: true,
     extras: [
@@ -258,7 +262,7 @@ const CATALOG = [
     category: "catering",
     icon: "🌮🌮🌮",
     dims: "Serves 30–100 guests",
-    price: 690,
+    price: 800,
     stock: 2,
     desc: "Our full taco bar experience: carne asada, al pastor, and shrimp tacos, a loaded salsa and toppings bar, chips and guacamole, horchata, and churros for dessert.",
     details: [
@@ -267,19 +271,20 @@ const CATALOG = [
       "Choice of Beans",
       "3 Sauces: Green, Red, Avocado",
       "5 Toppings: Onions, Cilantro, Lime Wedges, Pickled Red Onion, Pico de Gallo",
-      "3 Drinks: Horchata, Jamaica, Cucumber",
+      "Chips and Guacamole",
+      "4 Drinks: Horchata, Jamaica, Cucumber, Lemonade",
       "2 Desserts: Strawberry Banana Parfait, Rice Milk Pudding",
       "1 Salad"
     ],
     sizes: [
-      { id: "30", label: "30 Guests", price: 690 },
-      { id: "40", label: "40 Guests", price: 920 },
-      { id: "50", label: "50 Guests", price: 1150 },
-      { id: "60", label: "60 Guests", price: 1380 },
-      { id: "70", label: "70 Guests", price: 1610 },
-      { id: "80", label: "80 Guests", price: 1840 },
-      { id: "90", label: "90 Guests", price: 2070 },
-      { id: "100", label: "100 Guests", price: 2300 }
+      { id: "30", label: "30 Guests", price: 800 },
+      { id: "40", label: "40 Guests", price: 900 },
+      { id: "50", label: "50 Guests", price: 1000 },
+      { id: "60", label: "60 Guests", price: 1050 },
+      { id: "70", label: "70 Guests", price: 1200 },
+      { id: "80", label: "80 Guests", price: 1350 },
+      { id: "90", label: "90 Guests", price: 1500 },
+      { id: "100", label: "100 Guests", price: 1650 }
     ],
     scaleExtrasWithGuests: true,
     extras: [
